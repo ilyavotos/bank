@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Roboto:ital,wdth,wght@0,75..100,500;1,75..100,500&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-blue: rgba(24, 20, 243, 1);
+  --color-blue-light: rgba(113, 142, 191, 1);
+  --color-blue-dark: rgba(52, 60, 106, 1);
+  --color-blue-medium: rgba(45, 96, 255, 1);
+
+  --color-grey: rgba(177, 177, 177, 1);
+  --color-grey-light: rgba(245, 247, 250, 1);
+
+  --color-white: rgba(255, 255, 255, 1);
+  --color-white-blue: rgba(230, 239, 245, 1);
+  --color-white-blue: rgba(230, 239, 245, 1);
+
+  --color-black: rgba(35, 35, 35, 1);
+
+  /* Topography */
+  --font-inter: Inter, sans-serif;
+  --font-roboto: Roboto, sans-serif;
+
+  --spacing-header: 6.25rem;
+  --spacing-sidebar: 15rem;
+  --spacing-main: calc(100vh - var(--spacing-header));
+}
+
+@layer base {
+  html {
+    font-family: var(--font-inter);
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--color-black);
+  }
+  @media (width < 40rem) {
+    html {
+      font-size: 75%;
+    }
+  }
+  @media (width < 64rem) {
+    html {
+      font-size: 80%;
+    }
+  }
+}
