@@ -1,13 +1,14 @@
 import { Navigate, RouteObject } from "react-router";
 import { SignIn, SignUp } from "@features/auth/components";
-import { SIGNIN, SIGNUP, signinNavData } from "./auth-data";
+import { AUTH, SIGNIN, SIGNUP, signinNavData } from "./auth-data";
 import { AuthLayout } from "./auth-layout";
 
 export const authRouter: RouteObject = {
   element: <AuthLayout />,
+  path: AUTH,
   children: [
     {
-      element: <Navigate to={SIGNIN} replace state={{ title: signinNavData.title }} />, // default route for Setting
+      element: <Navigate to={SIGNIN} replace state={{ title: signinNavData.title }} />, // default route for auth
       index: true,
     },
     {

@@ -3,8 +3,12 @@ import { ButtonSubmit } from "@components/ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { SigninSchema, signinSchema } from "../schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { authUser } from "../api";
+import { useNavigate } from "react-router";
 
 export const SignIn = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -15,8 +19,9 @@ export const SignIn = () => {
     shouldUseNativeValidation: true,
   });
 
-  const onSubmit: SubmitHandler<SigninSchema> = (data) => {
-    console.log("data", data);
+  const onSubmit: SubmitHandler<SigninSchema> = async (data) => {
+    await authUser(data);
+    return navigate("/");
   };
 
   return (
